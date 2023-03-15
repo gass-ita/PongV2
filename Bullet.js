@@ -40,6 +40,7 @@ class Bullet{
                 this.y = this.container.h;
                 //TODO: the ball has to disappear
                 this.container.removeBullet(this);
+                this.container.bulletArrived(this.x);
             }
             
         }
@@ -76,9 +77,12 @@ class Bullet{
 
 
     show(){
+        push();
+        ellipseMode(CORNER);
         stroke(0);
         fill(255);
         ellipse(this.x, this.y, 10, 10);
+        pop();
     }
 
 }

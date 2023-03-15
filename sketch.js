@@ -4,7 +4,7 @@ function setup() {
   createCanvas(480, 800);
   container = new Container(480, 600, 10);
   container.createDefaultBlocks();
-  container.createBulletContainer(1000);
+  container.createBulletContainer(100);
 }
 
 function draw() {
@@ -15,6 +15,14 @@ function draw() {
   rect(0, 600, 480, 200);
 }
 
+
+let firstClick = false;
 function mouseClicked(){
-  container.bulletsContainer.shotEveryBullet(10, 1, 10, 10);
+  if(!firstClick) {
+    firstClick = true;
+    container.firstClick();
+  } else {
+    container.mouseClicked();
+    firstClick = false;
+  }
 }
