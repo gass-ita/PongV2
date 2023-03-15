@@ -27,10 +27,10 @@ class Container{
     show(){
         push();
         angleMode(DEGREES);
-        this.blocks.forEach((item) => {
+        this.bullets.forEach((item) => {
             item.show();
         });
-        this.bullets.forEach((item) => {
+        this.blocks.forEach((item) => {
             item.show();
         });
         if(this.bulletsContainer)
