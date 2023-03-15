@@ -53,25 +53,25 @@ class Block{
         }
 
         //return 1 if it hits the right
-        if(bullet.x > x + this.w / 2 && bullet.x < x + this.w && bullet.y > y && bullet.y < y + this.w){
+        else if(bullet.x > x + this.w / 2 && bullet.x < x + this.w && bullet.y > y && bullet.y < y + this.w){
             //set the bullet to the edge of the block
             bullet.x = x + this.w;
             return 1;
         }
 
         //return 2 if it hits the bottom
-        if(bullet.y > y + this.w / 2 && bullet.y < y + this.w && bullet.x > x && bullet.x < x + this.w){
+        else if(bullet.y > y + this.w / 2 && bullet.y < y + this.w && bullet.x > x && bullet.x < x + this.w){
             //set the bullet to the edge of the block
             bullet.y = y + this.w;
             return 2;
         }
 
         //return 3 if it hits the left
-        if(bullet.x < x + this.w / 2 && bullet.x > x && bullet.y > y && bullet.y < y + this.w){
+        else if(bullet.x < x + this.w / 2 && bullet.x > x && bullet.y > y && bullet.y < y + this.w){
             //set the bullet to the edge of the block
             bullet.x = x;
             return 3;
-        }
+        } else 
 
         return -1;
     }
